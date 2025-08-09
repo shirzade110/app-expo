@@ -1,13 +1,15 @@
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 import React from "react";
-import { StyleSheet } from "react-native";
+import { Pressable, StyleSheet } from "react-native";
 
 const register = () => {
   return (
     <ThemedView style={styles.container}>
-      <ThemedText>Register</ThemedText>
+      <Pressable style={({ pressed }) => [styles.btn , pressed && styles.pressed]} onPress={() => router.back()}>
+        <ThemedText type="link">Back</ThemedText>
+      </Pressable>
       <Link href="/login">
         <ThemedText type="link">Login</ThemedText>
       </Link>
@@ -25,5 +27,14 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+  },
+  btn: {
+    backgroundColor: "red",
+    padding: 10,
+    borderRadius: 5,
+    marginBottom: 10,
+  },
+  pressed: {
+    opacity: 0.7,
   },
 });
