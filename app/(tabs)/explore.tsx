@@ -7,6 +7,7 @@ import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { IconSymbol } from '@/components/ui/IconSymbol';
+import PostsList from '@/components/PostsList';
 
 export default function TabTwoScreen() {
   return (
@@ -24,6 +25,13 @@ export default function TabTwoScreen() {
         <ThemedText type="title">Explore</ThemedText>
       </ThemedView>
       <ThemedText>This app includes example code to help you get started.</ThemedText>
+      <Collapsible title="RTK Query Demo">
+        <ThemedText>
+          Below is a demonstration of RTK Query in action. It fetches posts from a demo API 
+          and shows loading states, error handling, and cache management.
+        </ThemedText>
+        <PostsList />
+      </Collapsible>
       <Collapsible title="File-based routing">
         <ThemedText>
           This app has two screens:{' '}
